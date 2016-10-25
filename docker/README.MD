@@ -1,6 +1,57 @@
 nginxのイメージを起動するチュートリアル。
 
-# 仕組み
+## dockerのインストール
+
+公式を参考にしてインストール
+
+https://docs.docker.com/engine/installation/
+
+例えば Ubuntuの場合
+
+### 1.前提パッケージをインストール
+
+```bash
+sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates
+```
+
+### 2.リポジトリにアクセスするためのGPGキーを取得
+
+```bash
+# recv-keysの後ろはその時最新のものを取得
+sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+```
+
+### 3.それぞれのUbuntuバージョンに対応したリポジトリのURLを、source.listに追加
+
+```bash
+# Ubuntu 16.04[LTS]の場合
+echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | sudo tee /etc/apt/source.list.d/docker.list
+```
+
+### 4.パッケージ情報をアップデート
+
+```bash
+sudo apt-get update
+```
+
+### 5.Dockerをインストール
+
+```bash
+sudo apt-get install docker-engine
+```
+
+### 6.Dockerデーモンを実行
+
+```bash
+# デーモン実行
+sudo service docker start
+
+# 再起動時も自動実行on
+sysv-rc-conf docker on
+```
+
+## Dockerの仕組み
 
 ```
 ローカルになにもない状態
