@@ -1,0 +1,3 @@
+INFO: message1
+ERROR: message2
+ERROR: message3
