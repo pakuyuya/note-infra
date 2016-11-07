@@ -19,3 +19,17 @@ ls -d <path to directory>
 ls -1 [<path>]
 ```
 
+### tar
+
+圧縮（拡張子自動識別）`*.tar.gz`とか`*.tar`とか。
+
+```bash
+tar axf <path_to_ziped> <path_to_target>
+```
+
+展開（拡張子自動識別）。`*.tar.gz`は二重展開？
+
+```bash
+tar xf <path_to_ziped>
+```
+
