@@ -35,8 +35,8 @@ yum localinstall -y mysql-community-common-5.7.26-1.el7.x86_64.rpm \
 mysqld --version
 
 # サービス自動起動設定とサービス起動
-symstemctl enable mysqld.service
-symstemctl start mysqld.service
+systemctl enable mysqld.service
+systemctl start mysqld.service
 
 # 初回起動後のログから、初期設定されたパスワードを確認
 cat /var/log/mysqld.log | grep password
